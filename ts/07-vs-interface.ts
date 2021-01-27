@@ -5,11 +5,11 @@
 
 // Definição
 interface IGame {
-  title: string;
+  title: string
 }
 
 interface IDLC {
-  extra: string;
+  extra: string
 }
 
 // Intersection | extend
@@ -17,18 +17,18 @@ interface IGameCollection extends IGame, IDLC {}
 
 // implements
 class ICreateGame implements IGameCollection {
-  title: string;
-  extra: string;
+  title: string
+  extra: string
 
   constructor(title: string, extra: string) {
-    this.title = title;
-    this.extra = extra;
+    this.title = title
+    this.extra = extra
   }
 }
 
 // declarar função
 interface IgetSimilars {
-  (title: string): void;
+  (title: string): void
 }
 
 // ===== Diferenças ===== //
@@ -37,17 +37,17 @@ interface IgetSimilars {
 
 // Pode ter múltiplas declarações e ele dá merge no mesmo nome
 interface IJQuery {
-  a: string;
+  a: string
 }
 
 interface IJQuery {
-  b: string;
+  b: string
 }
 
 const $: IJQuery = {
   a: 'bla',
   b: 'foo',
-};
+}
 
 ////
 // Vantagens das interfaces

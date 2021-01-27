@@ -1,13 +1,15 @@
+// As interfaces são exclusivamente para descrever a estrutura de objetos
+
 // Esse padrão com o 'I' na frente, vinha por causa no C#
 // Mas essa prática não é necessária
 interface IGame {}
 
 interface Game {
-  title: string;
-  description: string;
-  readonly genre: string; // genre não pode ser modificado
-  platform?: string[]; // Platform é opcional por causa do '?'
-  getSimilars?: (title: string) => void;
+  title: string
+  description: string
+  readonly genre: string // genre não pode ser modificado
+  platform?: string[] // Platform é opcional por causa do '?'
+  getSimilars?: (title: string) => void
 }
 
 const theLastOfUs: Game = {
@@ -16,20 +18,20 @@ const theLastOfUs: Game = {
   genre: 'Action',
   platform: ['PS3', 'PS4'],
   getSimilars: (title) => {
-    console.log(`Similar games to ${title}: Uncharted`);
+    console.log(`Similar games to ${title}: Uncharted`)
   },
-};
+}
 
-console.log(theLastOfUs.title);
+console.log(theLastOfUs.title)
 
 if (theLastOfUs.getSimilars) {
-  theLastOfUs.getSimilars(theLastOfUs.title);
+  theLastOfUs.getSimilars(theLastOfUs.title)
 }
 
 // Extendendo a interface Game
 interface DLC extends Game {
-  originalGame: Game;
-  newContent: string[];
+  originalGame: Game
+  newContent: string[]
 }
 
 const leftBehind: DLC = {
@@ -39,18 +41,18 @@ const leftBehind: DLC = {
   platform: ['PS4'],
   originalGame: theLastOfUs,
   newContent: ['3 hours story', 'new characters'],
-};
+}
 
-// Implementando uma interface na class
+// Implementando uma interface na classe
 class CreateGame implements Game {
-  title: string;
-  description: string;
-  genre: string;
+  title: string
+  description: string
+  genre: string
 
   constructor(title: string, description: string, genre: string) {
-    this.title = title;
-    this.description = description;
-    this.genre = genre;
+    this.title = title
+    this.description = description
+    this.genre = genre
   }
 }
 
@@ -64,18 +66,18 @@ class CreateGame implements Game {
 
 // Interfaces
 interface Point {
-  x: number;
-  y: number;
+  x: number
+  y: number
 }
 
 interface SetPoint {
-  (x: number, y: number): void;
+  (x: number, y: number): void
 }
 
 // Types
 type Point2 = {
-  x: number;
-  y: number;
-};
+  x: number
+  y: number
+}
 
-type SetPoint2 = (x: number, y: number) => void;
+type SetPoint2 = (x: number, y: number) => void

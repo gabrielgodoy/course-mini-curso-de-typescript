@@ -78,6 +78,7 @@ function delayMessage(ms: number) {
   return (target: any, key: string, descriptor: PropertyDescriptor) => {
     const originalMethod = descriptor.value;
 
+    // @ts-ignore
     descriptor.value = function (...args) {
       console.log(`Esperando ${ms}`);
       setTimeout(() => {
