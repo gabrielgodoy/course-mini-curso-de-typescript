@@ -6,5 +6,6 @@ Course: https://www.youtube.com/playlist?list=PLlAbYrWSYTiPanrzauGa7vMuve7_vnXG_
 
 ## Run in other terminal
 
-npm start -- [FILE_NAME]
-npm start -- ./dist/05-classes-modifiers-and-acessors.js
+`npm start -- ./dist/[FILE_NAME.js]` or `nodemon ./dist/file.js`
+
+`npm start -- ./dist/05-classes-modifiers-and-acessors.js`
