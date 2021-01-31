@@ -6,7 +6,8 @@ type Todo = {
   completed: boolean
 }
 
-// Type utility "Readonly"
+//
+// TYPE UTILITY "Readonly"
 const todo: Readonly<Todo> = {
   title: 'Assistir Dark de novo',
   description: 'Relembrar os detalhes',
@@ -15,11 +16,12 @@ const todo: Readonly<Todo> = {
 
 console.log(todo)
 
-// Todo é [Readonly]
+// O Todo é [Readonly]
 // Linha abaixo dá erro, não é possivel editar propriedades do objeto
-// todo.completed = true
+// > todo.completed = true
 
-// Type utility "Partial"
+//
+// TYPE UTILITY "Partial"
 // Para editarmos um objeto Readonly podemos criar uma função para isso
 // Serve para podermos passar somente algumas propriedades de um objeto. Faz todas as propriedades serem opcionais
 function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>) {
@@ -29,7 +31,8 @@ function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>) {
 const todo2: Todo = updateTodo(todo, { completed: true })
 console.log(todo2)
 
-// Type utility "Pick"
+//
+// TYPE UTILITY "Pick"
 // Serve para pegar somente um conjunto de propriedades de um tipo
 type TodoPreview = Pick<Todo, 'title' | 'completed'>
 
@@ -38,7 +41,7 @@ const todo3: TodoPreview = {
   completed: true,
 }
 
-// Type utility "Omit"
+// TYPE UTILITY "Omit"
 // Serve para pegar um tipo omitindo certas propriedades
 type TodoPreview2 = Omit<Todo, 'description'>
 

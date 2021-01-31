@@ -3,8 +3,9 @@
 
 // O decorator é uma função que recebe alguns paramêtros por default dependendo do tipo de decorator que se trabalha
 
-// @Component
-// @Selector
+// Exemplos:
+// @component
+// @selector
 // @useState(algumParametro)
 
 // Criando um decorator simples
@@ -26,6 +27,7 @@ function loggerDecorator(prefix: string) {
 @loggerDecorator('Constructor da classe é: ')
 class Foo {}
 
+//
 // CLASS DECORATOR
 // O decorator roda toda vez que criamos uma nova instância
 function setApiVersion(apiVersion: string) {
@@ -42,6 +44,7 @@ function setApiVersion(apiVersion: string) {
 class API {}
 console.log(new API())
 
+//
 // PROPERTY DECORATOR
 // Decorator para ser aplicado numa propriedade da classe
 function minLength(length: number) {
@@ -82,6 +85,7 @@ class Movie {
 const movie = new Movie('Interestellar')
 console.log('Movie: ', movie.title)
 
+//
 // METHOD DECORATOR
 // O decorator roda toda vez que o método for executado
 function delayMessage(ms: number) {
